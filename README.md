@@ -1,10 +1,11 @@
 # Controlling StyleGANs Using Rough Scribbles via One-shot Learning
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
 
 This repository provides the source code for "Controlling StyleGANs Using Rough Scribbles via One-shot Learning". This work is the extended version of <a href="https://github.com/endo-yuki-t/Fewshot-SMIS">our arXiv paper</a> for few-shot semantic image synthesis and contains post-processing refinement for sparse control. 
 <p align="center">
 <img src="docs/teaser.jpg" width="800px"/>
 <br>
-Our method can synthesize photorealistic images from rough semantic scribbles using a single training pairand a pre-trained StyleGAN model
+Our method can synthesize photorealistic images from rough semantic scribbles using a single training pair and a pre-trained StyleGAN model. 
 </p>
 
 ## Prerequisites  
@@ -15,16 +16,16 @@ Our method can synthesize photorealistic images from rough semantic scribbles us
 Download <a href="https://drive.google.com/file/d/1s-AS7WRUbL3MzEALxM8y4_XO3n3panxH/view?usp=sharing">StyleGAN pre-trained models</a> or prepare your own StyleGAN models and put them in the "pretrained_models" directory in the parent directoy. 
 
 ## Inference with our pre-trained models
-1. Download <a href="https://drive.google.com/file/d/1INoO3WpEY8hkx7LyOdiOX-dPBNEO4gSs/view?usp=sharing">our pretrained encoders</a> and put the "results" directory in the parent directory. 
+1. Download <a href="https://drive.google.com/file/d/1CNxJTxMJqqfBRfKhbPtKZdAyXB1pCfRN/view?usp=sharing">our pretrained encoders</a> and put the "results_sparse" directory in the parent directory. 
 2. For example, our results for LSUN cat in a one-shot setting can be generated as follows:
 ```
-python scripts/inference.py --exp_dir=results/LSUNcat --checkpoint_path=results/LSUNcat/checkpoints/iteration_100000.pt --data_path=./data/LSUNcat/test/labels/ --couple_outputs --latent_mask=8,9,10,11,12,13
+python scripts/inference.py --exp_dir=results_sparse/LSUNcat --checkpoint_path=results_sparse/LSUNcat/checkpoints/iteration_100000.pt --data_path=./data/LSUNcat/test/labels/ --couple_outputs --latent_mask=8,9,10,11,12,13
 ```
-Inference results are generated in results/LSUNcat. If you use other datasets, please specify --exp_dir, --checkpoint_path, and --data_path appropriately. 
+Inference results are generated in results_sparse/LSUNcat. If you use other datasets, please specify --exp_dir, --checkpoint_path, and --data_path appropriately. 
 
 3. If you want to refine the results in the post-processing stage, you can use inference_w_post.py instead of inference.py as follows: 
 ```
-python scripts/inference_w_post.py --exp_dir=results/LSUNcat --checkpoint_path=results/LSUNcat/checkpoints/iteration_100000.pt --data_path=./data/LSUNcat/test/labels/ --couple_outputs --latent_mask=8,9,10,11,12,13
+python scripts/inference_w_post.py --exp_dir=results_sparse/LSUNcat --checkpoint_path=results_sparse/LSUNcat/checkpoints/iteration_100000.pt --data_path=./data/LSUNcat/test/labels/ --couple_outputs --latent_mask=8,9,10,11,12,13
 ```
 
 <p align="center">
@@ -62,6 +63,8 @@ Then a StyleGAN image (\*.png) and a corresponding latent code (\*.pt) are obtai
 3. Edit ./config/data_configs.py and ./config/paths_config.py appropriately to use the annotated pair as a training set. 
 
 4. Run a training command above with appropriate options. 
+
+## Citation
 
 ## Acknowledgements
 This code heavily borrows from the [pixel2style2pixel](https://github.com/eladrich/pixel2style2pixel) repository. 
