@@ -1,12 +1,17 @@
 # Controlling StyleGANs Using Rough Scribbles via One-shot Learning
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
 
-This repository provides the source code for "Controlling StyleGANs Using Rough Scribbles via One-shot Learning". This work is the extended version of <a href="https://github.com/endo-yuki-t/Fewshot-SMIS">our arXiv paper</a> for few-shot semantic image synthesis and contains post-processing refinement for sparse control. 
 <p align="center">
 <img src="docs/teaser.jpg" width="800px"/>
 <br>
 Our method can synthesize photorealistic images from rough semantic scribbles using a single training pair and a pre-trained StyleGAN model. 
 </p>
+
+This repository contains our implementation of the following paper:
+
+Yuki Endo and Yoshihiro Kanamori: "Controlling StyleGANs Using Rough Scribbles via One-shot Learning," Computer Animation and Virtual Worlds (Computer Graphics International 2022) [<a href="http://www.cgg.cs.tsukuba.ac.jp/~endo/projects/StyleGANSparseControl/">Project</a>][<a href="http://www.cgg.cs.tsukuba.ac.jp/~endo/projects/StyleGANSparseControl/CAVW_endo22_preprint.pdf">PDF (preprint)</a>]
+
+This work is the extended version of <a href="https://github.com/endo-yuki-t/Fewshot-SMIS">our arXiv paper</a> for few-shot semantic image synthesis and contains post-processing refinement for sparse control. 
 
 ## Prerequisites  
 1. Python3
