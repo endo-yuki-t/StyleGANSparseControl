@@ -70,6 +70,19 @@ Then a StyleGAN image (\*.png) and a corresponding latent code (\*.pt) are obtai
 4. Run a training command above with appropriate options. 
 
 ## Citation
+Please cite our paper if you find the code useful:
+```
+@Article{endoCAVW2022,
+Title = {Controlling StyleGANs Using Rough Scribbles via One-shot Learning},
+Author = {Yuki Endo and Yoshihiro Kanamori},
+Journal = {Computer Animation and Virtual Worlds},
+volume = {},
+number = {},
+pages = {},
+doi = {},
+Year = {2022}
+}
+```
 
 ## Acknowledgements
 This code heavily borrows from the [pixel2style2pixel](https://github.com/eladrich/pixel2style2pixel) repository. 
